@@ -1,4 +1,4 @@
-# DailyTrade with a Gains Cap versus a Hold Strategy
+# Daily Trade with a Gains Cap versus a Hold Strategy
 
 This project looks at the effectiveness of a Daily Trade strategy with a set gains cap versus a Hold strategy in two increasing blue-chip technology stocks, Amazon and Facebook. The Amazon dataset includes all days the market was open between November 3rd, 2003 and July 11th, 2016. The Facebook dataset includes all days the market was open between May 18th, 2012 and July 1st, 2015.
 
