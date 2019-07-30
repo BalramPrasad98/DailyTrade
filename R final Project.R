@@ -11,7 +11,6 @@ quantile(Amazon$Close, probs=0.95)
 a <- round(95*length(Amazon$Close))
 g <- sort(Amazon$Close)
 
-Facebook$Date[(length(Facebook$Date))]
 #Higher price at end of the day than the start of the day
 Close_greater_Open = Amazon[Amazon$Open < Amazon$Close,]
 #What percentage did these stocks increase by from Open to Close
@@ -71,6 +70,12 @@ mean(Change_Day_Price) ##0.502
 #Formula for Amazon buying everyday at the opening price and selling if stock 
 #appreciates 5%, otherwise at the closing price
 Amazon$Change <- ((Amazon$High - Amazon$Open)/Amazon$Open)*100
+Exceeds_Cap = Amazon[Amazon$Change > 6,]
+sum(Amazon$Change>6) # There are 57 days in which the cap would be executed - 1%
+mean(-(Exceeds_Cap$Close - Exceeds_Cap$High)) # average gains from this strategy is 1.50
+
+# Setting at 6% which is the highest - want to look at smallest value to hold 
+# confounding variables constant
 PercentageCap <- 6
 
 #New column with the selling price for each day
